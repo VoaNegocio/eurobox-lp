@@ -1,8 +1,24 @@
-import { useRef } from 'react';
-import { ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
+import { useRef, useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight, MessageCircle, X } from 'lucide-react';
+import Button3D from './ui/Button3D';
+import FadeIn from './ui/FadeIn';
 
 export default function BasketsShowcase() {
     const scrollRef = useRef(null);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const handleScroll = () => {
+        if (scrollRef.current) {
+            const { scrollLeft, clientWidth } = scrollRef.current;
+            // Calculate active index based on scroll position + half card width for better centering accuracy
+            const index = Math.round(scrollLeft / 324); // 300px min-width + 24px gap approx
+            setActiveIndex(index);
+        }
+    };
+
+    const openModal = (image) => setSelectedImage(image);
+    const closeModal = () => setSelectedImage(null);
 
     const baskets = [
         { title: "Cesta Premium", image: "/imgs/carrossel-section3/img1-carrossel.jpg", description: "Sofisticação em cada detalhe." },
@@ -34,13 +50,13 @@ export default function BasketsShowcase() {
     return (
         <section className="py-12 md:py-24 bg-stone-50 overflow-hidden">
             <div className="container mx-auto px-4">
-                <div className="text-center max-w-3xl mx-auto mb-8 md:mb-16">
+                <FadeIn className="text-center max-w-3xl mx-auto mb-8 md:mb-16">
                     <h2 className="text-3xl md:text-4xl font-serif text-stone-900 mb-4 md:mb-6">Cada cesta começa com uma <span className="italic text-amber-700">conversa</span>.</h2>
                     <p className="text-lg text-stone-600">
                         Antes de montar, a Vanessa escuta. A história. O motivo. A intenção por trás do presente.
                         A partir disso, cada detalhe é escolhido com cuidado.
                     </p>
-                </div>
+                </FadeIn>
 
                 <div className="relative group">
                     <button
@@ -52,15 +68,20 @@ export default function BasketsShowcase() {
 
                     <div
                         ref={scrollRef}
+                        onScroll={handleScroll}
                         className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide px-4"
                         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                     >
                         {baskets.map((basket, index) => (
                             <div
                                 key={index}
-                                className="min-w-[300px] md:min-w-[350px] bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow snap-start flex-shrink-0"
+                                className="min-w-[300px] md:min-w-[350px] bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow snap-start flex-shrink-0 cursor-pointer"
+                                onClick={() => openModal(basket.image)}
                             >
-                                <div className="h-64 overflow-hidden">
+                                <div className="h-64 overflow-hidden relative group">
+                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10 flex items-center justify-center">
+                                        <MessageCircle className="text-white opacity-0 group-hover:opacity-100 transition-opacity transform scale-75 group-hover:scale-100" />
+                                    </div>
                                     <img
                                         src={basket.image}
                                         alt={basket.title}
@@ -81,20 +102,55 @@ export default function BasketsShowcase() {
                     >
                         <ChevronRight className="w-6 h-6 text-stone-800" />
                     </button>
+
+                    {/* Standard Mobile Experience: iOS-style Pagination Dots */}
+                    <div className="flex justify-center gap-2 mt-4 md:hidden">
+                        {baskets.map((_, index) => (
+                            <div
+                                key={index}
+                                className={`h-2 rounded-full transition-all duration-300 ${index === activeIndex ? 'w-6 bg-amber-600' : 'w-2 bg-stone-300'
+                                    }`}
+                            />
+                        ))}
+                    </div>
                 </div>
 
                 <div className="mt-12 text-center">
-                    <a
-                        href="https://wa.me/5516999999999?text=Olá,%20gostaria%20de%20ver%20o%20catálogo%20completo!"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white text-base md:text-lg font-medium px-6 py-3 md:px-8 md:py-4 rounded-full transition-all hover:shadow-lg transform hover:-translate-y-1 w-full md:w-auto justify-center"
+                    <Button3D
+                        href="https://wa.me/5516992572063?text=Olá,%20gostaria%20de%20ver%20o%20catálogo%20completo!"
+                        variant="green"
+                        className="w-full md:w-auto text-base md:text-lg"
                     >
                         <MessageCircle className="w-5 h-5 md:w-6 md:h-6" />
                         <span>Ver catálogo completo no WhatsApp</span>
-                    </a>
+                    </Button3D>
                 </div>
             </div>
+
+            {/* Image Modal */}
+            {selectedImage && (
+                <div
+                    className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 backdrop-blur-sm"
+                    onClick={closeModal}
+                >
+                    <button
+                        className="absolute top-4 right-4 text-white hover:text-amber-500 transition-colors"
+                        onClick={closeModal}
+                    >
+                        <X className="w-8 h-8 md:w-10 md:h-10" />
+                    </button>
+                    <div
+                        className="relative max-w-4xl w-full max-h-[90vh] flex items-center justify-center"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <img
+                            src={selectedImage}
+                            alt="Visualização ampliada"
+                            className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
+                        />
+                    </div>
+                </div>
+            )}
 
             <style jsx>{`
                 .scrollbar-hide::-webkit-scrollbar {

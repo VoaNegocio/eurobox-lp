@@ -11,7 +11,7 @@ export default function FinalCTA() {
                 </p>
 
                 <a
-                    href="https://wa.me/5516999999999?text=Olá,%20gostaria%20de%20fazer%20um%20pedido!"
+                    href="https://wa.me/5516992572063?text=Olá,%20gostaria%20de%20fazer%20um%20pedido!"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block bg-green-600 hover:bg-green-700 text-white text-lg font-bold px-12 py-5 rounded-full shadow-xl transition-transform hover:-translate-y-1"

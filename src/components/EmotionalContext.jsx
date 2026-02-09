@@ -1,4 +1,6 @@
 import { MessageCircle } from 'lucide-react';
+import Button3D from './ui/Button3D';
+import FadeIn from './ui/FadeIn';
 
 export default function EmotionalContext() {
     return (
@@ -9,34 +11,29 @@ export default function EmotionalContext() {
                 <div className="absolute inset-0 bg-linear-to-t from-stone-900 via-stone-900/80 to-stone-900/60"></div>
             </div>
 
-            <div className="container mx-auto max-w-3xl space-y-6 md:space-y-8 relative z-10">
-
-                <div className="w-16 h-1 bg-amber-500 mx-auto rounded-full mb-6 md:mb-8 shadow-lg shadow-amber-500/20"></div>
-
-                <h2 className="text-2xl md:text-4xl font-serif text-white leading-snug drop-shadow-sm">
-                    "Presentear bem não é só escolher algo bonito. <br />
-                    É conseguir <span className="italic text-amber-500">surpreender</span> no momento certo."
+            {/* Content Container - Glassmorphism */}
+            <FadeIn className="relative z-10 max-w-4xl mx-auto text-center bg-white/10 backdrop-blur-md p-8 md:p-12 rounded-3xl border border-white/20 shadow-2xl">
+                <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">
+                    "Não é só uma cesta. É o <span className="text-amber-400 italic">cuidado</span> que você enviaria se pudesse ir pessoalmente."
                 </h2>
-
-                <div className="text-lg md:text-xl text-stone-300 leading-relaxed space-y-6 mb-8 md:mb-12">
+                <div className="space-y-6 text-lg text-stone-100 font-light mb-10">
                     <p>
-                        A EuroBox Gourmet nasceu para transformar gestos simples em experiências memoráveis — mesmo quando o pedido acontece de última hora.
+                        Sabemos que a distância às vezes aperta. Que a correria do dia a dia nos impede de estar presente em momentos especiais.
                     </p>
                     <p>
-                        Aqui, cada cesta carrega intenção, cuidado e a vontade real de encantar quem recebe.
+                        A EuroBox existe para encurtar essa distância. Para transformar sua intenção em um gesto palpável, saboroso e inesquecível.
                     </p>
                 </div>
 
-                <a
-                    href="https://wa.me/5516999999999?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20as%20cestas!"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white text-base md:text-lg font-medium px-6 py-3 md:px-8 md:py-4 rounded-full transition-all hover:shadow-lg transform hover:-translate-y-1 w-full md:w-auto justify-center"
+                <Button3D
+                    href="https://wa.me/5516992572063?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20as%20cestas!"
+                    variant="green"
+                    className="w-full md:w-auto text-base md:text-lg"
                 >
                     <MessageCircle className="w-5 h-5 md:w-6 md:h-6" />
                     <span>Quero surpreender agora</span>
-                </a>
-            </div>
+                </Button3D>
+            </FadeIn>
         </section>
     );
 }

@@ -1,4 +1,6 @@
 import { Clock, Heart, CheckCircle, MessageCircle } from 'lucide-react';
+import Button3D from './ui/Button3D';
+import FadeIn from './ui/FadeIn';
 
 export default function Differential() {
     const features = [
@@ -28,28 +30,28 @@ export default function Differential() {
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
-                <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-                    <div>
-                        <h2 className="text-3xl md:text-4xl font-serif mb-4 md:mb-6 leading-tight">
-                            Surpreender bem, <br />
-                            mesmo <span className="text-amber-500 italic">sem planejamento</span>.
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                    <FadeIn>
+                        <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">
+                            Agilidade que <span className="text-amber-400 italic">impressiona</span>.
                         </h2>
-                        <p className="text-stone-300 text-lg mb-8 leading-relaxed">
-                            Nem toda surpresa nasce com antecedência. Às vezes ela surge no meio da semana,
-                            ou quando você percebe que alguém merece um carinho hoje.
+                        <p className="text-lg text-stone-200 mb-8 font-light">
+                            Esqueceu a data? Decidiu de última hora? Não se preocupe.
+                            Não somos uma fábrica industrial. Somos um ateliê ágil.
+                            Garantimos a entrega da sua cesta gourmet em tempo recorde,
+                            sem perder a elegância e o toque pessoal.
                             A EuroBox está preparada para esses momentos.
                         </p>
 
-                        <a
-                            href="https://wa.me/5516999999999?text=Preciso%20de%20uma%20entrega%20rápida!"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-3 bg-amber-600 hover:bg-amber-700 text-white text-base md:text-lg font-medium px-6 py-3 md:px-8 md:py-4 rounded-full transition-all hover:shadow-lg transform hover:-translate-y-1 w-full md:w-auto justify-center"
+                        <Button3D
+                            href="https://wa.me/5516992572063?text=Preciso%20de%20uma%20entrega%20rápida!"
+                            variant="amber"
+                            className="w-full md:w-auto text-base md:text-lg"
                         >
                             <MessageCircle className="w-5 h-5 md:w-6 md:h-6" />
                             <span>Pedir com agilidade</span>
-                        </a>
-                    </div>
+                        </Button3D>
+                    </FadeIn>
 
                     <div className="space-y-8">
                         {features.map((feature, index) => (
@@ -66,6 +68,6 @@ export default function Differential() {
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     );
 }

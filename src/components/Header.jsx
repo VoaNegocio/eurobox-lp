@@ -1,13 +1,43 @@
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
 export default function Header() {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 20);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <header className="fixed top-0 w-full z-50 py-3 md:py-4 px-4 transition-all duration-300">
-            <div className="absolute inset-0 bg-green-800/60 backdrop-blur-md border-b border-white/10 shadow-sm"></div>
-            <div className="container mx-auto flex justify-center md:justify-between items-center relative z-10">
-                <div className="w-32 md:w-48">
-                    <img src="/imgs/logo/logo-verde.png" alt="EuroBox Gourmet" className="w-full h-auto" />
+        <motion.header
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out px-4 flex justify-center ${isScrolled ? 'py-1' : 'py-3 md:py-4'
+                }`}
+        >
+            <div className={`
+                w-fit mx-auto transition-all duration-500 ease-in-out overflow-hidden rounded-full
+                ${isScrolled
+                    ? 'bg-green-900/80 backdrop-blur-md border border-white/10 shadow-md'
+                    : 'bg-green-900/40 backdrop-blur-sm border border-white/5'
+                }
+            `}>
+                <div className={`relative z-10 flex justify-center items-center transition-all duration-500 ${isScrolled ? 'px-4 py-1' : 'px-5 py-2'}`}>
+                    <motion.div
+                        className="relative"
+                        initial={false}
+                        animate={{
+                            width: isScrolled ? '40px' : '50px',
+                            filter: isScrolled ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'drop-shadow(0 4px 6px rgba(0,0,0,0.2))'
+                        }}
+                        transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
+                    >
+                        <img src="/imgs/logo/logo-verde.png" alt="EuroBox Gourmet" className="w-full h-auto" />
+                    </motion.div>
                 </div>
-                {/* Placeholder for potential navigation or social icons */}
             </div>
-        </header>
+        </motion.header>
     );
 }
