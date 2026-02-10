@@ -5,7 +5,7 @@ import FadeIn from './ui/FadeIn';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center pt-24 pb-12 md:pt-32 md:pb-20 px-4 bg-stone-50 overflow-hidden">
+        <section className="relative min-h-screen flex items-center pt-20 pb-12 md:pt-32 md:pb-20 px-4 bg-stone-50 overflow-hidden">
             {/* Background Image Placeholder - To be replaced with real image */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-linear-to-r from-stone-50 via-stone-50/90 to-transparent z-10"></div>
@@ -14,12 +14,12 @@ export default function Hero() {
 
             <div className="container mx-auto px-4 grid md:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
                 <FadeIn className="text-center md:text-left order-2 md:order-1">
-                    <div className="inline-block bg-green-100 text-green-800 px-4 py-1 rounded-full text-sm font-semibold mb-4 md:mb-6">
-                        🚀 Entrega mais rápida de Ribeirão Preto
+                    <div className="inline-block bg-amber-100 text-amber-800 px-3 py-1 md:px-4 rounded-full text-xs md:text-sm font-semibold mb-4 md:mb-6">
+                        ☀️ Energia que transforma
                     </div>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-stone-900 leading-tight mb-4 md:mb-6">
-                        Cestas que <span className="text-green-600 italic">emocionam</span>,<br />
-                        entregas que <span className="text-amber-600 italic">surpreendem</span>.
+                    <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-stone-900 leading-tight mb-4 md:mb-6">
+                        Energia que <span className="text-amber-500 italic">ilumina</span>,<br />
+                        economia que <span className="text-amber-600 italic">surpreende</span>.
                     </h1>
                     <p className="text-lg md:text-xl text-stone-600 mb-6 md:mb-8 font-light">
                         Personalizadas com cuidado, pensadas a partir da sua história e entregues rapidamente em Ribeirão Preto — inclusive aos domingos.
@@ -27,7 +27,7 @@ export default function Hero() {
 
                     <Button3D
                         href="https://wa.me/5516992572063?text=Olá,%20gostaria%20de%20fazer%20um%20pedido!"
-                        variant="green"
+                        variant="amber"
                         withPulse={true}
                         className="w-full md:w-auto text-lg md:text-xl"
                     >

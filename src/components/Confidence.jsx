@@ -49,7 +49,7 @@ export default function Confidence() {
                             {clientImages.map((img, index) => (
                                 <motion.div
                                     key={index}
-                                    className="min-w-[280px] md:min-w-[350px] h-[400px] bg-stone-100 rounded-3xl overflow-hidden shadow-md border 
+                                    className="min-w-[260px] md:min-w-[350px] h-[320px] md:h-[400px] bg-stone-100 rounded-3xl overflow-hidden shadow-md border 
                                                border-stone-100 relative group"
                                 >
                                     <img
@@ -57,9 +57,9 @@ export default function Confidence() {
                                         alt={`Cliente Satisfeito ${index + 1}`}
                                         className="w-full h-full object-cover pointer-events-none group-hover:scale-105 transition-transform duration-500"
                                     />
-                                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
-                                        <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
-                                        <span className="text-xs font-bold text-stone-800">Cliente Real</span>
+                                    <div className="absolute top-3 right-3 md:top-4 md:right-4 bg-white/90 backdrop-blur-sm px-2 py-1 md:px-3 rounded-full shadow-sm flex items-center gap-1">
+                                        <Star className="w-3 h-3 md:w-4 md:h-4 text-amber-500 fill-amber-500" />
+                                        <span className="text-[10px] md:text-xs font-bold text-stone-800">Cliente Real</span>
                                     </div>
                                 </motion.div>
                             ))}

@@ -20,11 +20,11 @@ export default function Header() {
             <div className={`
                 w-fit mx-auto transition-all duration-500 ease-in-out overflow-hidden rounded-full
                 ${isScrolled
-                    ? 'bg-green-900/80 backdrop-blur-md border border-white/10 shadow-md'
-                    : 'bg-green-900/40 backdrop-blur-sm border border-white/5'
+                    ? 'bg-white/90 backdrop-blur-md border border-stone-200/50 shadow-md'
+                    : 'bg-white/40 backdrop-blur-sm border border-white/40 shadow-sm'
                 }
             `}>
-                <div className={`relative z-10 flex justify-center items-center transition-all duration-500 ${isScrolled ? 'px-4 py-1' : 'px-5 py-2'}`}>
+                <div className={`relative z-10 flex justify-center items-center transition-all duration-500 ${isScrolled ? 'px-3 md:px-4 py-1' : 'px-4 md:px-5 py-2'}`}>
                     <motion.div
                         className="relative"
                         initial={false}
