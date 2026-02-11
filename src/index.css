@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@layer utilities {
+    .btn-premium {
+        @apply relative overflow-hidden bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-bold shadow-lg transition-all duration-300 hover:shadow-emerald-500/40 hover:-translate-y-0.5 hover:scale-105;
+    }
+
+    .btn-premium::after {
+        content: "";
+        @apply absolute top-0 left-0 h-full w-full bg-linear-to-r from-transparent via-white/30 to-transparent -translate-x-full;
+        animation: shimmer 3s infinite;
+    }
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}

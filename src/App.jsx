@@ -11,11 +11,21 @@ import './App.css';
 function App() {
   return (
     <Layout>
-      <Hero />
-      <EmotionalContext />
-      <BasketsShowcase />
-      <Differential />
-      <Confidence />
+      <div id="home">
+        <Hero />
+      </div>
+      <div id="emotional-context">
+        <EmotionalContext />
+      </div>
+      <div id="baskets">
+        <BasketsShowcase />
+      </div>
+      <div id="differential">
+        <Differential />
+      </div>
+      <div id="confidence">
+        <Confidence />
+      </div>
       <FinalCTA />
     </Layout>
   );

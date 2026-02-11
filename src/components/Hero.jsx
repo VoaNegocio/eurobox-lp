@@ -1,6 +1,5 @@
 import { useRef, useEffect } from 'react';
 import { MessageCircle, ChevronsDown } from 'lucide-react';
-import Button3D from './ui/Button3D';
 import FadeIn from './ui/FadeIn';
 
 export default function Hero() {
@@ -25,15 +24,15 @@ export default function Hero() {
                         Personalizadas com cuidado, pensadas a partir da sua história e entregues rapidamente em Ribeirão Preto — inclusive aos domingos.
                     </p>
 
-                    <Button3D
+                    <a
                         href="https://wa.me/5516992572063?text=Olá,%20gostaria%20de%20fazer%20um%20pedido!"
-                        variant="amber"
-                        withPulse={true}
-                        className="w-full md:w-auto text-lg md:text-xl"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-premium inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-lg md:text-xl w-full md:w-auto"
                     >
                         <MessageCircle className="w-6 h-6" />
                         <span>Peça agora no WhatsApp</span>
-                    </Button3D>
+                    </a>
                 </FadeIn>
 
                 {/* Visual Aspect - Right side image or composition (Desktop) */}
