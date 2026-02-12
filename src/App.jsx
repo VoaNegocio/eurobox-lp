@@ -17,14 +17,14 @@ function App() {
       <div id="emotional-context">
         <EmotionalContext />
       </div>
+      <div id="confidence">
+        <Confidence />
+      </div>
       <div id="baskets">
         <BasketsShowcase />
       </div>
       <div id="differential">
         <Differential />
-      </div>
-      <div id="confidence">
-        <Confidence />
       </div>
       <FinalCTA />
     </Layout>
