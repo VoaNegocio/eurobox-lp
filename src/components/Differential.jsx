@@ -44,7 +44,7 @@ export default function Differential() {
                         </p>
 
                         <Button3D
-                            href="https://wa.me/5516992572063?text=Preciso%20de%20uma%20entrega%20rápida!"
+                            href="https://api.whatsapp.com/send/?phone=5516992572063&text=Ol%C3%A1%2C+vim+pela+p%C3%A1gina+de+vendas.&type=phone_number&app_absent=0"
                             variant="amber"
                             className="w-full md:w-auto text-base md:text-lg"
                         >

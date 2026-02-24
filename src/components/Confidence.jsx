@@ -78,7 +78,7 @@ export default function Confidence() {
 
                 <div className="text-center mt-8">
                     <Button3D
-                        href="https://wa.me/5516992572063?text=Quero%20fazer%20parte%20dos%20clientes%20felizes!"
+                        href="https://api.whatsapp.com/send/?phone=5516992572063&text=Ol%C3%A1%2C+vim+pela+p%C3%A1gina+de+vendas.&type=phone_number&app_absent=0"
                         variant="green"
                         className="w-full md:w-auto text-base md:text-lg"
                     >

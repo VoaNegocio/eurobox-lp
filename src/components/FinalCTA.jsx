@@ -11,7 +11,7 @@ export default function FinalCTA() {
                 </p>
 
                 <a
-                    href="https://wa.me/5516992572063?text=Olá,%20gostaria%20de%20fazer%20um%20pedido!"
+                    href="https://api.whatsapp.com/send/?phone=5516992572063&text=Ol%C3%A1%2C+vim+pela+p%C3%A1gina+de+vendas.&type=phone_number&app_absent=0"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block btn-premium text-lg px-12 py-5 rounded-full"
