@@ -6,7 +6,7 @@ import FadeIn from './ui/FadeIn';
 export default function BasketsShowcase() {
     const scrollRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
-    const [selectedImage, setSelectedImage] = useState(null);
+    const [selectedIndex, setSelectedIndex] = useState(null);
 
     const handleScroll = () => {
         if (scrollRef.current) {
@@ -17,8 +17,18 @@ export default function BasketsShowcase() {
         }
     };
 
-    const openModal = (image) => setSelectedImage(image);
-    const closeModal = () => setSelectedImage(null);
+    const openModal = (index) => setSelectedIndex(index);
+    const closeModal = () => setSelectedIndex(null);
+
+    const nextImage = (e) => {
+        e.stopPropagation();
+        setSelectedIndex((prev) => (prev + 1) % baskets.length);
+    };
+
+    const prevImage = (e) => {
+        e.stopPropagation();
+        setSelectedIndex((prev) => (prev - 1 + baskets.length) % baskets.length);
+    };
 
     const baskets = [
         { title: "Cesta Premium", image: "/imgs/carrossel-section3/img1-carrossel.jpg", description: "Sofisticação em cada detalhe." },
@@ -76,7 +86,7 @@ export default function BasketsShowcase() {
                             <div
                                 key={index}
                                 className="min-w-[300px] md:min-w-[350px] bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow snap-start flex-shrink-0 cursor-pointer"
-                                onClick={() => openModal(basket.image)}
+                                onClick={() => openModal(index)}
                             >
                                 <div className="h-64 overflow-hidden relative group">
                                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10 flex items-center justify-center">
@@ -128,26 +138,50 @@ export default function BasketsShowcase() {
             </div>
 
             {/* Image Modal */}
-            {selectedImage && (
+            {selectedIndex !== null && (
                 <div
-                    className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 backdrop-blur-sm"
+                    className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-2 sm:p-4 backdrop-blur-md transition-opacity duration-300"
                     onClick={closeModal}
                 >
                     <button
-                        className="absolute top-4 right-4 text-white hover:text-amber-500 transition-colors"
+                        className="absolute top-4 sm:top-6 right-4 sm:right-6 z-60 text-stone-300 hover:text-white bg-black/50 hover:bg-black/80 p-2 sm:p-3 rounded-full transition-all"
                         onClick={closeModal}
+                        aria-label="Fechar galeria"
                     >
-                        <X className="w-8 h-8 md:w-10 md:h-10" />
+                        <X className="w-6 h-6 sm:w-8 sm:h-8" />
                     </button>
+
+                    <button
+                        className="absolute left-2 sm:left-8 top-1/2 -translate-y-1/2 z-60 text-stone-300 hover:text-white bg-black/50 hover:bg-black/80 p-2 sm:p-3 rounded-full transition-all"
+                        onClick={prevImage}
+                        aria-label="Foto anterior"
+                    >
+                        <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" />
+                    </button>
+
+                    <button
+                        className="absolute right-2 sm:right-8 top-1/2 -translate-y-1/2 z-60 text-stone-300 hover:text-white bg-black/50 hover:bg-black/80 p-2 sm:p-3 rounded-full transition-all"
+                        onClick={nextImage}
+                        aria-label="Próxima foto"
+                    >
+                        <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" />
+                    </button>
+
                     <div
-                        className="relative max-w-4xl w-full max-h-[90vh] flex items-center justify-center"
+                        className="relative w-full h-full max-w-6xl flex flex-col items-center justify-center py-12 px-12 sm:px-24"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <img
-                            src={selectedImage}
-                            alt="Visualização ampliada"
-                            className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
+                            src={baskets[selectedIndex].image}
+                            alt={baskets[selectedIndex].title}
+                            className="max-w-full max-h-full object-contain rounded-lg shadow-2xl transition-transform duration-300"
+                            style={{ maxHeight: '80vh' }}
                         />
+                        <div className="absolute bottom-6 sm:bottom-10 left-0 right-0 text-center pointer-events-none">
+                            <span className="bg-black/70 text-white px-5 py-2 sm:px-6 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium tracking-wide backdrop-blur-md shadow-lg border border-white/10">
+                                {baskets[selectedIndex].title} <span className="text-stone-400 mx-2">|</span> {selectedIndex + 1} de {baskets.length}
+                            </span>
+                        </div>
                     </div>
                 </div>
             )}
