@@ -127,7 +127,7 @@ export default function BasketsShowcase() {
 
                 <div className="mt-12 text-center">
                     <Button3D
-                        href="https://api.whatsapp.com/send/?phone=5516992572063&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+um+or%C3%A7amento.&type=phone_number&app_absent=0"
+                        href="https://api.whatsapp.com/send/?phone=5516992572063&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+um+or%C3%A7amento+personalizado.&type=phone_number&app_absent=0"
                         variant="green"
                         className="w-full md:w-auto text-base md:text-lg"
                     >

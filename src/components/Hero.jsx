@@ -25,7 +25,7 @@ export default function Hero() {
                     </p>
 
                     <a
-                        href="https://api.whatsapp.com/send/?phone=5516992572063&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+um+or%C3%A7amento.&type=phone_number&app_absent=0"
+                        href="https://api.whatsapp.com/send/?phone=5516992572063&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+um+or%C3%A7amento+personalizado.&type=phone_number&app_absent=0"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-premium inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-lg md:text-xl w-full md:w-auto"
