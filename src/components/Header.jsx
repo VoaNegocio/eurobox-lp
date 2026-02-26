@@ -55,7 +55,7 @@ export default function Header() {
                 {/* CTA Button */}
                 <div className="hidden md:block">
                     <a
-                        href="https://api.whatsapp.com/send/?phone=5516992572063&text=Ol%C3%A1%2C+vim+pela+p%C3%A1gina+de+vendas.&type=phone_number&app_absent=0"
+                        href="https://api.whatsapp.com/send/?phone=5516992572063&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+um+or%C3%A7amento.&type=phone_number&app_absent=0"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-bold shadow-lg transition-all duration-300 hover:shadow-emerald-500/40 hover:-translate-y-0.5 hover:scale-105 px-6 py-2.5 rounded-full"
@@ -94,7 +94,7 @@ export default function Header() {
                                 </a>
                             ))}
                             <a
-                                href="https://api.whatsapp.com/send/?phone=5516992572063&text=Ol%C3%A1%2C+vim+pela+p%C3%A1gina+de+vendas.&type=phone_number&app_absent=0"
+                                href="https://api.whatsapp.com/send/?phone=5516992572063&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+um+or%C3%A7amento.&type=phone_number&app_absent=0"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-bold shadow-lg transition-all duration-300 hover:shadow-emerald-500/40 hover:-translate-y-0.5 hover:scale-105 text-center px-5 py-3 rounded-xl"

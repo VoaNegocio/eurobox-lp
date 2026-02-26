@@ -63,7 +63,7 @@ export default function BasketsShowcase() {
                 <FadeIn className="text-center max-w-3xl mx-auto mb-8 md:mb-16">
                     <h2 className="text-3xl md:text-4xl font-serif text-stone-900 mb-4 md:mb-6">Cada cesta começa com uma <span className="italic text-amber-700">conversa</span>.</h2>
                     <p className="text-lg text-stone-600">
-                        Antes de montar, a Vanessa escuta. A história. O motivo. A intenção por trás do presente.
+                        Antes de montar, eu escuto. A história. O motivo. A intenção por trás do presente.
                         A partir disso, cada detalhe é escolhido com cuidado.
                     </p>
                 </FadeIn>
@@ -127,7 +127,7 @@ export default function BasketsShowcase() {
 
                 <div className="mt-12 text-center">
                     <Button3D
-                        href="https://api.whatsapp.com/send/?phone=5516992572063&text=Ol%C3%A1%2C+vim+pela+p%C3%A1gina+de+vendas.&type=phone_number&app_absent=0"
+                        href="https://api.whatsapp.com/send/?phone=5516992572063&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+um+or%C3%A7amento.&type=phone_number&app_absent=0"
                         variant="green"
                         className="w-full md:w-auto text-base md:text-lg"
                     >
