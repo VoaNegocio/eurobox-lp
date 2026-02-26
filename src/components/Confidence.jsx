@@ -6,11 +6,11 @@ import FadeIn from './ui/FadeIn';
 
 const clientImages = [
     '/imgs/section-confidence-imgs-videos/cliente-satisfeito1.webp',
-    '/imgs/section-confidence-imgs-videos/cliente-satisfeito2.webp',
+    '/imgs/section-confidence-imgs-videos/imagem-card-remastered2.jpg',
     '/imgs/section-confidence-imgs-videos/cliente-satisfeito3.webp',
     '/imgs/section-confidence-imgs-videos/cliente-satisfeito4.webp',
     '/imgs/section-confidence-imgs-videos/cliente-satisfeito5.webp',
-    '/imgs/section-confidence-imgs-videos/cliente-satisfeito6.webp',
+    '/imgs/section-confidence-imgs-videos/imagem-card-remastered.jpg',
     '/imgs/section-confidence-imgs-videos/cliente-satisfeito7.webp',
 ];
 
