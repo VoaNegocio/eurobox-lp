@@ -14,7 +14,7 @@ export default function Hero() {
             <div className="container mx-auto px-4 grid md:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
                 <FadeIn className="text-center md:text-left order-2 md:order-1">
                     <div className="inline-block bg-amber-100 text-amber-800 px-3 py-1 md:px-4 rounded-full text-xs md:text-sm font-semibold mb-4 md:mb-6">
-                        ☀️ Memórias que se transformam em presentes
+                        ☀️ Presentes que se transformam em memórias
                     </div>
                     <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-stone-900 leading-tight mb-4 md:mb-6">
                         Momentos que criam <span className="text-amber-500 italic">histórias</span>,<br />
