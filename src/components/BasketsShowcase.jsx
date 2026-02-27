@@ -32,7 +32,7 @@ export default function BasketsShowcase() {
 
     const baskets = [
         { title: "Cesta Premium", image: "/imgs/carrossel-section3/img1-carrossel.jpg", description: "Sofisticação em cada detalhe." },
-        { title: "Café da Manhã", image: "/imgs/carrossel-section3/img2-carrossel.jpg", description: "Comece o dia com carinho." },
+        { title: "Café da Manhã", image: "/imgs/section-confidence-imgs-videos/imagem-card-remastered2.jpg", description: "Comece o dia com carinho." },
         { title: "Happy Hour", image: "/imgs/carrossel-section3/img3-carrossel.jpg", description: "Para momentos de celebração." },
         { title: "Romântica", image: "/imgs/carrossel-section3/img4-carrossel.jpg", description: "Amor em forma de presente." },
         { title: "Gourmet", image: "/imgs/carrossel-section3/img5-carrossel.jpg", description: "Sabores selecionados." },
@@ -41,7 +41,7 @@ export default function BasketsShowcase() {
         { title: "Carinho", image: "/imgs/carrossel-section3/img8-carrossel.jpg", description: "Demonstre seu afeto." },
         { title: "Surpresa", image: "/imgs/carrossel-section3/img9-carrossel.jpg", description: "Inesquecível." },
         { title: "Delícias", image: "/imgs/carrossel-section3/img10-carrossel.jpg", description: "Sabor inigualável." },
-        { title: "Encanto", image: "/imgs/carrossel-section3/img11-carrossel.jpg", description: "Feito para encantar." },
+        { title: "Encanto", image: "/imgs/section-confidence-imgs-videos/imagem-card-remastered.jpg", description: "Feito para encantar." },
         { title: "Momentos", image: "/imgs/carrossel-section3/img12-carrossel.jpg", description: "Crie memórias." },
     ];
 
