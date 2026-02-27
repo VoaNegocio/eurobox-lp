@@ -10,9 +10,10 @@ export default function BasketsShowcase() {
 
     const handleScroll = () => {
         if (scrollRef.current) {
-            const { scrollLeft, clientWidth } = scrollRef.current;
-            // Calculate active index based on scroll position + half card width for better centering accuracy
-            const index = Math.round(scrollLeft / 324); // 300px min-width + 24px gap approx
+            const { scrollLeft } = scrollRef.current;
+            // Calculate based on responsive card width + 24px gap
+            const cardWidth = window.innerWidth < 640 ? 280 : 320;
+            const index = Math.round(scrollLeft / (cardWidth + 24));
             setActiveIndex(index);
         }
     };
@@ -85,7 +86,7 @@ export default function BasketsShowcase() {
                         {baskets.map((basket, index) => (
                             <div
                                 key={index}
-                                className="min-w-[300px] md:min-w-[350px] bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow snap-start flex-shrink-0 cursor-pointer"
+                                className="w-[280px] sm:w-[320px] md:w-[350px] flex-none bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow snap-center sm:snap-start cursor-pointer h-auto flex flex-col"
                                 onClick={() => openModal(index)}
                             >
                                 <div className="h-64 overflow-hidden relative group">
